@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>َAnimated Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"/>
+  </head>
+  <body>
+    <script src="./bootstrap/js/jquery.min.js"/></script>
+    <script src="./bootstrap/js/bootstrap.min.js"/></script>
+<form class="box" action="index.html" method="POST" id="demoForm">
+  <h1>Login</h1>
+  <label style="color: brown;">Username  <input type="text" name="" placeholder="Username"></label>
+
+  <input type="password" name="" placeholder="Password">
+  <input type="submit" name="" value="Login">
+</form>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function (e) {
+              FormValidation.formValidation(document.getElementById('demoForm'), {
+                  fields: {
+                      fullName: {
+                          validators: {
+                              regexp: {
+                                  regexp: /^[a-z\s]+$/i,
+                                  message: 'The full name can consist of alphabetical characters and spaces only',
+                              },
+                          },
+                      },
+                  },
+                  plugins: {
+                      trigger: new FormValidation.plugins.Trigger(),
+                      bootstrap: new FormValidation.plugins.Bootstrap(),
+                      submitButton: new FormValidation.plugins.SubmitButton(),
+                      icon: new FormValidation.plugins.Icon({
+                          valid: 'fa fa-check',
+                          invalid: 'fa fa-times',
+                          validating: 'fa fa-refresh',
+                      }),
+                  },
+              });
+          });
+      </script>
+  </body>
+  
+
+</html>
